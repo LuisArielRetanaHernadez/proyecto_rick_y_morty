@@ -1,0 +1,133 @@
+.App {
+  text-align: center;
+  height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*==========*/
+.row{
+  display: flex;
+  width: 100%;
+}
+.container{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  background-color: brown;
+}
+/*=======*/
+#LocationInfo{
+  width: 100%;
+  background-color: #282c34;
+}
+#LocationInfo ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+.HeaderWeb{
+  background-image: url(./media/img/back-header-web.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+.container-searchbox{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SearchBox{
+  background-color: #a1a1a17e;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+.SearchBox input{
+  background-color: rgb(50, 197, 5);
+  color: black;
+  border: 2px solid rgb(49, 95, 34);
+  padding: 4px 10px;
+  margin: 2px;
+  outline: none;
+}
+.SearchBox button{
+  background-color: rgb(50, 197, 5);
+  color: black;
+  border: 2px solid rgb(49, 95, 34);
+}
+/*=========*/
+#ResidentInfo{
+  width: 100%;
+  height: auto;
+  background-color: #61dafb;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#ResidentInfo .ComponentResident{
+  width: 50%;
+  width: 35%;
+}
+.ComponentResident{
+  background-color: crimson;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 3px;
+}
+.ComponentResident{
+  border: 2px solid rgb(50, 197, 5);
+  margin: 2px;
+}
+.ComponentResident img{
+  width: 35%;
+  max-height: 100%;
+  border-radius: 5%;
+}
+.ComponentResident .ContainerInfoResident{
+  width: 63%;
+  flex-wrap: wrap;
+}
+/*============*/
+.list-style-none{
+  list-style: none;
+}
