@@ -1,13 +1,13 @@
-const LocationInfo = ({nameLocation,typeLocation,dimensionLation,amountResidentsLocation}) =>{
+const LocationInfo = ({nameLocation,typeLocation,dimensionLocation,amountResidentsLocation}) =>{
 
     return (
         <div id='LocationInfo'>
             <div className="row">
                 <ul>
-                    <li>Nombre: <strong>Earth</strong></li>
-                    <li>Tipo: <strong>Planeta</strong></li>
-                    <li>Dimension: <strong>(65-FC)</strong></li>
-                    <li>Can. Residentes: <strong>20</strong></li>
+                    <li>Nombre: <strong>{nameLocation}</strong></li>
+                    <li>Tipo: <strong>{typeLocation}</strong></li>
+                    <li>Dimension: <strong>{dimensionLocation}</strong></li>
+                    <li>Can. Residentes: <strong>{amountResidentsLocation}</strong></li>
                 </ul>
             </div>
         </div>

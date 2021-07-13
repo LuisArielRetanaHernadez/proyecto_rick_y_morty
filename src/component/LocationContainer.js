@@ -7,6 +7,10 @@ const LocationContainer = ({getUrlApi}) =>{
     const [apiRickMorty, setApiRickMorty] = useState('')
     const [location, setLocation] = useState('')
     const [urlsResidents, setUrlsResidents] = useState('')
+    const [amountResident, setAmountResident] = useState('')
+    const [nameLocation, setNameLocation] = useState('')
+    const [dimensionLocation, setDimensionLocation] = useState('')
+    const [typeLocation, setTypeLocation] = useState('')
 
     const searchLocation = (value) => {
         setLocation(value)
@@ -29,10 +33,21 @@ const LocationContainer = ({getUrlApi}) =>{
     },[location])
 
     useEffect(() => {
-        if(apiRickMorty.results){
-            setUrlsResidents(apiRickMorty.results[0].residents)
-        }else{
-            setUrlsResidents(apiRickMorty.residents)
+        if(apiRickMorty){
+            if(apiRickMorty.results){
+                setUrlsResidents(apiRickMorty.results[0].residents)
+                setAmountResident(apiRickMorty.results[0].residents.length)
+                setNameLocation(apiRickMorty.results[0].name)
+                setDimensionLocation(apiRickMorty.results[0].dimension)
+                setTypeLocation(apiRickMorty.results[0].type)
+            }else{
+                setUrlsResidents(apiRickMorty.residents)
+                setAmountResident(apiRickMorty.residents.length)
+                setNameLocation(apiRickMorty.name)
+                setDimensionLocation(apiRickMorty.dimension)
+                setTypeLocation(apiRickMorty.type)
+            }
+
         }
     },[apiRickMorty])
 
@@ -43,7 +58,7 @@ const LocationContainer = ({getUrlApi}) =>{
     return (
         <section className="Container">
             <HeaderWeb searchLocation={searchLocation} />
-            <LocationInfo></LocationInfo>
+            <LocationInfo nameLocation={nameLocation} dimensionLocation={dimensionLocation} typeLocation={typeLocation} amountResidentsLocation={amountResident}></LocationInfo> 
         </section>
     )
 }
