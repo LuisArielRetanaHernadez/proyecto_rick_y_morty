@@ -25,13 +25,11 @@ const ResidentContainer = ({urlsResidents}) =>{
         if(urlsResidents){
             setUrlsResidentsState(prevent => {
                 if(JSON.stringify(prevent) !== JSON.stringify(urlsResidents)){
-                    console.log('cambio')
                     setIndexUrlResident(0)
                     setAllResidents([])
                     return urlsResidents
                 }
             })
-            console.log(urlsResidents)
         }
     },[urlsResidents])
 
@@ -53,19 +51,10 @@ const ResidentContainer = ({urlsResidents}) =>{
     useEffect(() =>{
         if(urlsResdientsState && allResidents){
             if(urlsResdientsState.length === allResidents.length){
-                console.log('urls: ', urlsResdientsState.length, ' all: ', allResidents.length)
                 setDataAllResidents(allResidents)
             }
         }
     },[urlsResdientsState,allResidents])
-
-    useEffect(() =>{
-        if(dataAllResidents){
-            if(dataAllResidents.length > 0){
-                console.log(dataAllResidents)
-            }
-        }
-    },[dataAllResidents])
 
     return (
        <ResidentInfo dataResidents={dataAllResidents}></ResidentInfo> 
