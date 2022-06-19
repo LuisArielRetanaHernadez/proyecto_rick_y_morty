@@ -4,7 +4,7 @@ import LocationInfo from './LocationInfo';
 
 const LocationContainer = ({getUrlApi}) =>{
     
-    const [apiRickMorty, setApiRickMorty] = useState('')
+    const [apiRickMorty, setApiRickMorty] = useState({})
     const [location, setLocation] = useState('')
     const [urlsResidents, setUrlsResidents] = useState('')
     const [amountResident, setAmountResident] = useState('')
@@ -33,7 +33,8 @@ const LocationContainer = ({getUrlApi}) =>{
     },[location])
 
     useEffect(() => {
-        if(apiRickMorty){
+        if(Object.keys(apiRickMorty).length > 0 && !apiRickMorty.error){
+
             if(apiRickMorty.results){
                 setUrlsResidents(apiRickMorty.results[0].residents)
                 setAmountResident(apiRickMorty.results[0].residents.length)
@@ -47,7 +48,6 @@ const LocationContainer = ({getUrlApi}) =>{
                 setDimensionLocation(apiRickMorty.dimension)
                 setTypeLocation(apiRickMorty.type)
             }
-
         }
     },[apiRickMorty])
 
