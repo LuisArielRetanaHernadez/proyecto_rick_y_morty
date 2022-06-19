@@ -18,6 +18,7 @@ const LocationContainer = ({getUrlApi}) =>{
 
     useEffect(() => {
         const petition = async () => {
+            
             if(location){
                 const url = `https://rickandmortyapi.com/api/location/?name=${location}`
                 const data = await fetch(url).then(response => response.json()).catch(err => err)
